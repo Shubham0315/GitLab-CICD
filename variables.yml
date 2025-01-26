@@ -1,0 +1,4 @@
+bash_execute:
+  script:
+    - echo "Name is $NAME"
+    - echo "Passowrd is $PASS"
