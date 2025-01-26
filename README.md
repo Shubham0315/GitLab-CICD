@@ -154,6 +154,46 @@ Schedule Jobs using CRON
 ![image](https://github.com/user-attachments/assets/1d7154f7-77ae-4b1c-a2f8-b35f73cb890e)
 
 Manual Deployment
+-
+- Add when: clasue in script as below.
+
+![image](https://github.com/user-attachments/assets/83b7ad13-221c-4e77-89ec-528707539d7d)
+
+- When we commit changes, our build and test stages get executed but deploy stage will wait for our manual instruction. So we can press play button here to run the stage
+
+![image](https://github.com/user-attachments/assets/d2cb8b41-62cf-4f95-836c-98ea6061b61f)
+
+Pre-defined Variables
+-
+- We can use those variables in scripts without defining them. Used for logging purpose
+- One of them is :- CI_COMMIT_AUTHOR, expmple of use case is below. We can see author name(username and email) in logs as well.
+
+![image](https://github.com/user-attachments/assets/51e21299-e0e7-42ba-9f2a-e7ab5eb4f151)
+
+![image](https://github.com/user-attachments/assets/c4af457b-8bfd-4fed-ab78-733b02ba0da6)
+
+Working with GIT:- Import GitHub project
+-
+- Now we've to use the imported GitHub project in pipeline
+- Create new project in GitLab. Here we can see option of "Import Project" --> select GitHub --> Authorize using GitHub
+
+![image](https://github.com/user-attachments/assets/cf42013a-4bfa-43d4-9ac0-8536951b83cc)
+
+![image](https://github.com/user-attachments/assets/d1eeb690-2f39-42d2-bbc4-35e8df845e0b)
+
+![image](https://github.com/user-attachments/assets/ee781437-81cf-4700-bf21-284f8754cace)
+
+- Once this is done, we get below page where we can see GitHub repos inside our GitLab console and we can select "Import" option for the repo we want.
+
+![image](https://github.com/user-attachments/assets/23cac856-87f1-47f5-a8f0-b8c742cef4a4)
+
+![image](https://github.com/user-attachments/assets/85cd4661-a09d-444b-9844-62d8cc69cfd0)
+
+![image](https://github.com/user-attachments/assets/768b32be-db93-4cfb-a786-c64fd654a481)
+
+- By default, ruby image is used for GitLab CICD. We can change that. To run our code using custom images, we can use like below
+
+![image](https://github.com/user-attachments/assets/e855c7bb-6e61-4646-9b9c-3a252fb92c34)
 
 
 
