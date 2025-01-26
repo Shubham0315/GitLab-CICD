@@ -1,0 +1,4 @@
+build:
+  image: python:latest
+  script:
+    - python test.py
