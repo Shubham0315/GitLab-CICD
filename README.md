@@ -119,6 +119,41 @@ Pipeline Auto Run
 -
 - Even if we do changes in our script file, our pipeline will run automatically. And we can see our added content in logs as well.
 
+Environment Variables
+-
+- Go to Settings --> CICD --> Variables --> Add
+  Define type and environment. Provide "Key" and "Value" (Lets say Key and value :- Name and Gitlab
+
+![image](https://github.com/user-attachments/assets/218a760d-5bde-4b5d-8487-114f9d6bc483)
+
+![image](https://github.com/user-attachments/assets/034d3f75-1f8d-44d1-97c8-e5cf456c9fb3)
+
+- Create another variable using "masked" visibility
+
+![image](https://github.com/user-attachments/assets/bf267b68-5e89-4942-82ba-6d166e2da026)
+
+- Now go to repo yml file and add variables here (pass the variables in script). Inside logs we can see values of both key variables
+
+![image](https://github.com/user-attachments/assets/dad61da7-90d2-4bb9-9a36-b342b2160659)
+
+![image](https://github.com/user-attachments/assets/99e0263e-8f65-4f38-ba3e-d04f88d4fcf9)
+
+Email Notification
+-
+- Lets edit the yml file and make mistake. We'll get notified that our pipeline is failed through email. If we correct the error we get mail as pipeline is fixed
+
+
+Schedule Jobs using CRON
+-
+- Usually when we do changes in file, our pipeline gets run. But we want to run the pipeline at desired time without manual need. This will help run pipelines periodically when we're not on screen.
+- Go to Build --> Pipeline Schedules --> Create a new pipeline schedule --> Select timezone, pattern and create pipeline
+- Creating this will also give us "Next run timings"
+
+![image](https://github.com/user-attachments/assets/663d5d10-63f0-486a-9dc2-5ddd57c5dd2d)
+
+![image](https://github.com/user-attachments/assets/1d7154f7-77ae-4b1c-a2f8-b35f73cb890e)
+
+Manual Deployment
 
 
 
