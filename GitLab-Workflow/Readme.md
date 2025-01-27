@@ -50,5 +50,56 @@ x
 Creating Pipelines
 -
 - To create pipelines we dont need jenkins kind of tool. All features are there in gitlab.
-- To create pipelines, create new file :- .gitlab-ci.yml. Here key-value 
+- To create pipelines, create new file :- .gitlab-ci.yml. Here key-value pair is used.
+- Gitlab CI works on 2 things :- stages and jobs. In CICD pipeline we've stages and inside stages we've jobs (In jenkins inside pipeline, there're stages and inside stages there're steps).
+- Suppose we've 4 stages to perform :- build, test, push, deploy. We've to define those stages in gitlab yml file
+  If we've build_job inside build stage and we've to run some script inside it.
+- Using "script" keyword inside yml we can run shell scripts. Create jobs for stages in our pipeline as below and create file. As soon as we create yml file, our pipeline runs.
+
+-**For gitlab yml keywords(cheat sheet) :- https://cheatography.com/violaken/cheat-sheets/gitlab-ci-cd-pipeline-configuration/
+**  
+-
+
+![image](https://github.com/user-attachments/assets/eaa2e0b6-6a7b-4718-a26b-9b6b767178ff)
+
+![image](https://github.com/user-attachments/assets/49761f45-a458-4dcd-b296-5d0adddd0755)
+
+
+- Once we commit this gitlab-ci.yml file in our project, Build option gets unlocked for ur in the left console where we can make pipelines, check jobs, check pipeline syntax using pipeline editor. Check below SS:-
+
+![image](https://github.com/user-attachments/assets/7613d964-5341-4393-8477-40eac2399879)
+
+- In jenkins we dont deploy/execute jobs on master node. Here in Gitlab we havent created/added agents like slaves so how this is getting deployed here??
+  Go to Settings --> CICD --> Runners
+  So here in Gitlab we've runners to run jobs unlike agents in jenkins. Runners are processes that pick up and execute CICD jobs for gitlab
+
+- Here are 2 types:-
+  > Project runners :- self hosted we can setup own runner creating EC2
+  > Instance runners :- all over world where we can deploy our projects freely. Only requirement is runner should be in active state.
+- So we can make our own runners as well as use Gitlab runners.
+
+![image](https://github.com/user-attachments/assets/9053b4d8-bd86-415e-85a1-2640f889f113)
+
+- We can edit CI files in various ways :-
+  1. pipeline editor - to highlight syntax errors
+  2. Web IDE - We can make GITLAB IDE for our project and manage our project there. Commit files and apply.
   
+![image](https://github.com/user-attachments/assets/d4d8eac0-ff09-4701-a6c6-efe4cd6ebacc)
+
+  Here we can have multiple jobs running in one stage in parallel. Just give stage name like below in IDE and commit the changes. (Suppose we've to test in prod, dev and test parallely)
+
+![image](https://github.com/user-attachments/assets/db1d2fd6-9404-4a6b-a973-e489685f793d)
+
+  Now when we go to pipeline, we can see our pipeline is triggered automatically and also check how parallel builds are executed. 
+  
+![image](https://github.com/user-attachments/assets/151c2518-958f-4f21-a421-9ec1b7ebc795)
+
+![image](https://github.com/user-attachments/assets/73d4b496-dac2-4b4d-9223-e4785c2aa6bf)
+
+ In the logs we can also check which runner is being used by particular job.
+
+<img width="831" alt="image" src="https://github.com/user-attachments/assets/95ad04e0-8ed0-443f-a162-246c7dcafd74" />
+
+
+
+
