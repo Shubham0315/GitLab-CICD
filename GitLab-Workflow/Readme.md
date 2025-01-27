@@ -170,3 +170,19 @@ Artifacts
 ![image](https://github.com/user-attachments/assets/5da06704-6de3-45d8-b6fc-8456a1bca739)
 
  Download those files, we can see the logs in downlaoded files.
+
+Runners
+-
+- 2 types of runners :- Self hosted and SaaS(Instance)
+- Instance runners have Gitlab software installed and they run our pipelines. If we go to our pipeline, we can see on which runner the job was run.
+
+<img width="831" alt="image" src="https://github.com/user-attachments/assets/7783ccc4-cc00-4935-aa29-cc6f501482ef" />
+
+- If we want the pipeline to run on our runner/platform, go to CICD --> Runners --> New project runner
+  Specify tags like dev,prod, staging so that jobs get assigned to these runners (In jenkins runners mean agents).
+
+![image](https://github.com/user-attachments/assets/4b9a97b7-0afc-44b7-95c2-84f05f345b36)
+
+- When we create runner, we can have docker container, k8s as runner or linux instance as runner. Only condition is Gitlab runner must be installed before we register a runner.
+
+![image](https://github.com/user-attachments/assets/d5c54cba-6bf2-4c3a-89ac-938173d1636e)
