@@ -1,0 +1,55 @@
+stages:
+    - build
+    - test
+    - push
+    - deploy
+
+#User defined variables
+variables:
+    DEPLOY_ENV: "production"
+    GITLAB_USER_KEY: "This-is-my-secret-key"
+
+build_job:
+    stage: build
+    script:
+        - echo "This $CI_PROJECT_NAME build id done using command <docker build -t tag . >"         #Pre defined variables $CI_PROJECT_NAME
+
+test_job:
+    stage: test
+    script:
+        - echo "This is testing of our docker build done by $CI_COMMIT_AUTHOR"                     #Pre defined variable $CI_COMMIT_AUTHOR
+        - mkdir -p logs
+        - echo "These are my test results" > logs/app.log
+    artifacts:
+        paths:
+            - logs/
+        expire_in: 1 week
+
+push_job:
+    stage: push
+    script: 
+        - echo "This"
+        - echo "is pushing to docker hub for $DEPLOY_ENV"
+
+deploy_job:
+    stage: deploy
+    script:
+        - echo "This"
+        - echo "is deploying to EC2 instance for $DOCKERHUB_USER"
+        - echo "This log is from $CI_JOB_STAGE" >> logs/app.log
+    artifacts:
+        paths:
+            - logs/
+        expire_in: 1 week
+
+
+dev_test_job:
+    stage: test
+    script:
+        - echo "Tested for dev env using $GITLAB_USER_KEY"
+
+prod_test_job:
+    stage: test
+    script:
+        - echo "Tested for prod env $GITLAB_USER_KEY"
+
