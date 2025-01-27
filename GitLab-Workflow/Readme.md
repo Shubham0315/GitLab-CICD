@@ -19,5 +19,35 @@ How to use GitLab?
 - Syntax :- **https://gitlab.com/{group}/{project}**
   
 - We can create group and projects under them as per requirement and add members if necessary granting them access. So when we invite members, invite will go to them and they will accept to checkout project.
+
+- We need SSH key or SSO for push, pull or any other operations to perform on gitlab. If we want to use through HTTPS, we need personal access token. There is no password kind of thing in gitlab.
+
+Steps to add SSH key
+-
+- Launch t2-micro/ubuntu EC2 instance in AWS with a key pair and allow HTTP/HTTPS traffic.
+- When instance is ready, connect using SSH command inside of instance (take command like below)
+ > ssh -i "key-pair" ubuntu@ip.region.compute.amazonaws.com
+- Connect to the instance
+- To connect this EC2 and our Gitlab server, run below
+  > ssh-keygen --> enter --> enter --> key is ready (public+private)
+- Go to cd .ssh , here we can see 2 keys **id_ed###** and **id_ed###.pub**.
+- To push/pull code from this EC2 to our Gitlab, private key will be on EC2 and public key will be on Gitlab. So copy the public key and add SSH key so that key gets registered with our Gitlab account.
+
+- Now in project, we can go to code and clone it with SSH (Copy the link of project)
+  Go to instance console, make one dir, and do git clone and connect. In this way we've cloned private repo via SSH
+  Command :- **git clone git@gitlab.com/$group/$project**
+
+Import Project
+-
+- To import from Github, choose "Repository by URL" and use any github repo
+  Put the repo URL and choose group under which we've to copy. Create project.
+- Just in case if anyone makes changes on our repo in Github and we want to replicate those changes automatically on Gitlab, we can use **"Mirror this Repository"**.
+
+- In Github there is "Pull request" and in Gitlab there is "Merge request"
+
+x
+-
+Craeting Pipelines
+-
 - 
   
