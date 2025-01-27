@@ -47,7 +47,8 @@ Import Project
 
 x
 -
-Craeting Pipelines
+Creating Pipelines
 -
-- 
+- To create pipelines we dont need jenkins kind of tool. All features are there in gitlab.
+- To create pipelines, create new file :- .gitlab-ci.yml. Here key-value 
   
