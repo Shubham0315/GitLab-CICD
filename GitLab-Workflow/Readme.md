@@ -81,8 +81,8 @@ Creating Pipelines
 ![image](https://github.com/user-attachments/assets/9053b4d8-bd86-415e-85a1-2640f889f113)
 
 - We can edit CI files in various ways :-
-  1. pipeline editor - to highlight syntax errors
-  2. Web IDE - We can make GITLAB IDE for our project and manage our project there. Commit files and apply.
+  - pipeline editor - to highlight syntax errors
+  - Web IDE - We can make GITLAB IDE for our project and manage our project there. Commit files and apply.
   
 ![image](https://github.com/user-attachments/assets/d4d8eac0-ff09-4701-a6c6-efe4cd6ebacc)
 
@@ -100,6 +100,22 @@ Creating Pipelines
 
 <img width="831" alt="image" src="https://github.com/user-attachments/assets/95ad04e0-8ed0-443f-a162-246c7dcafd74" />
 
+Variable
+-
+- To use passwords, secrets go to IDE. In build_job we have to pass project name in echo command. There are some inbuilt variables like $CI_PROJECT_NAME, $CI_COMMIT_AUTHOR. We can also define variable on own (user defined variables). For that refer below SS :-
 
+![image](https://github.com/user-attachments/assets/eba58c64-278e-46cf-873f-66af544c6ef9)
 
+- Here - is NA as we're creating variable objects not list of variables just like we do in docker compose for env.
+- Output for above variables is as given below:-
+
+![image](https://github.com/user-attachments/assets/4330da28-ca3b-41dd-9cbf-8b4dc9a285c1)
+
+![image](https://github.com/user-attachments/assets/9d9c2a05-f3d4-49f4-919b-5bc09e0b666c)
+
+![image](https://github.com/user-attachments/assets/9f13f5fe-766a-48a5-bcc1-c18f83ccd93f)
+  
+![image](https://github.com/user-attachments/assets/00e2777e-41b3-47b5-85ea-c27736e342d5)
+
+![image](https://github.com/user-attachments/assets/5f4af1de-c726-494e-833e-f83a2bcb620c)
 
