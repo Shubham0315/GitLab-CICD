@@ -29,7 +29,7 @@ Steps to add SSH key
  > ssh -i "key-pair" ubuntu@ip.region.compute.amazonaws.com
 - Connect to the instance
 - To connect this EC2 and our Gitlab server, run below
-  > ssh-keygen --> enter --> enter --> key is ready (public+private)
+   **ssh-keygen --> enter --> enter --> key is ready (public+private)**
 - Go to cd .ssh , here we can see 2 keys **id_ed###** and **id_ed###.pub**.
 - To push/pull code from this EC2 to our Gitlab, private key will be on EC2 and public key will be on Gitlab. So copy the public key and add SSH key so that key gets registered with our Gitlab account.
 
@@ -74,8 +74,8 @@ Creating Pipelines
   So here in Gitlab we've runners to run jobs unlike agents in jenkins. Runners are processes that pick up and execute CICD jobs for gitlab
 
 - Here are 2 types:-
-  > Project runners :- self hosted we can setup own runner creating EC2
-  > Instance runners :- all over world where we can deploy our projects freely. Only requirement is runner should be in active state.
+  - Project runners :- self hosted we can setup own runner creating EC2
+  - Instance runners :- all over world where we can deploy our projects freely. Only requirement is runner should be in active state.
 - So we can make our own runners as well as use Gitlab runners.
 
 ![image](https://github.com/user-attachments/assets/9053b4d8-bd86-415e-85a1-2640f889f113)
