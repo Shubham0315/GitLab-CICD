@@ -119,3 +119,54 @@ Variable
 
 ![image](https://github.com/user-attachments/assets/5f4af1de-c726-494e-833e-f83a2bcb620c)
 
+Secrets
+-
+- Go to CICD --> Variables
+  To add variable we need to provide type, environment, description, visibility, etc. We can do like below for our dockerhub credentials. Keeping them masked.
+  Protected variable :- to use variable for specific branches only.
+
+![image](https://github.com/user-attachments/assets/03b6880f-843a-41ee-96d4-b8831e252636)
+
+![image](https://github.com/user-attachments/assets/0a05dd04-53e0-421b-bd39-365143a579f7)
+
+ For password variable create Personal Access Token in DockerHub
+ Go to Account --> Settings --> Personal Access Token --> Generate new token --> Copy the token --> Add to variable as password for dockerhub
+
+![image](https://github.com/user-attachments/assets/5887ee3e-920c-4a1e-9961-ef44cede3743)
+
+<img width="939" alt="image" src="https://github.com/user-attachments/assets/e53eba2e-8392-452a-ad6b-abe828de9e32" />
+
+![image](https://github.com/user-attachments/assets/94683357-347c-4389-95b9-2817067682da)
+
+Now we've below 2 variables which are not visible to anyone as they're masked
+
+![image](https://github.com/user-attachments/assets/bf4078ac-fedd-4968-b66d-423a89710c3c)
+
+- To use these custom variables, go to IDE and edit the yml. We can see our username is masked.
+
+![image](https://github.com/user-attachments/assets/1fa551f0-5b8f-4863-9913-bb147795bfb3)
+
+![image](https://github.com/user-attachments/assets/cc939a91-f087-4f6c-b581-5e22c1c95dde)
+
+Artifacts
+-
+- Suppose, we've run some test cases and it generated logs or reports which we want to be downloaded in a file.
+  So the things which we can collect from the pipelines to share with others are called as **Artifacts**
+- In short artifacts means we've to store logs of pipeline at some place.
+
+- Go to CICD --> Artifacts --> Keep artifacts from most recent successful jobs
+- Now we've to use those artifacts in our pipeline
+
+![image](https://github.com/user-attachments/assets/6cba8f08-b76a-4e2d-8050-ee2c54237eb9)
+
+- Now go to IDE and lets say we need artifacts of test_job and we've to store logs in **app.log** file. But we've to tell our job where is artifactory of this (mention path). app.log is a file which we're preserving from script/job.
+- Here we're creating one folder called "**logs**" which is artifact folder for logs. We can also set expiry for logs using **"expire_in:"**
+- Here we need to create directory as well when we need to create folder of our name. 
+
+![image](https://github.com/user-attachments/assets/daa8d6ff-fba7-413f-aad4-48672d23c825)
+
+- Now we can go to artifacts we can see 2 type of files generated under "deploy_job" and "test_job"
+
+![image](https://github.com/user-attachments/assets/5da06704-6de3-45d8-b6fc-8456a1bca739)
+
+ Download those files, we can see the logs in downlaoded files.
