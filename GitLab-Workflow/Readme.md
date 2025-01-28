@@ -213,3 +213,13 @@ Runners
 
   <img width="717" alt="image" src="https://github.com/user-attachments/assets/ca9b45ae-aef2-40d3-83bb-91d9f62bb1ed" />
 
+# PROJECT
+
+- Clone the repository to GITALB :- node-todo-cicd
+- Create GITLAB yml file for stages and other requirments
+
+![image](https://github.com/user-attachments/assets/3cd3e75c-25fb-4ceb-b641-e8b8045f5bb6)
+
+![image](https://github.com/user-attachments/assets/f52d6dbb-fc33-4354-b008-373f98e5018f)
+
+
