@@ -186,3 +186,30 @@ Runners
 - When we create runner, we can have docker container, k8s as runner or linux instance as runner. Only condition is Gitlab runner must be installed before we register a runner.
 
 ![image](https://github.com/user-attachments/assets/d5c54cba-6bf2-4c3a-89ac-938173d1636e)
+
+- Take the script from below and paste on our linux instance so that it will create the runner
+
+![image](https://github.com/user-attachments/assets/2bc3e3d4-dd94-4673-b6e2-777468191bbd)
+
+- Using below commands we can check status of runner :- **gitlab-runner status**
+
+![image](https://github.com/user-attachments/assets/b1801bb4-b576-4666-83de-45aa29814511)
+
+- Now to register this runner with Gitlab project. We've to run our ci.yml pipeline on the linux instance so we need to convert the linux instance into a runner. As we've installed the runner on linux instance but runner is not registered with linux instance.
+- To register a runner :- **gitlab-runner register  --url https://gitlab.com  --token glrt-t3_ezTGhjX35dQGuXusZT67**
+  Now it will ask for Gitlab instance URL --> enter runner name --> enter (select) executor
+
+  ![image](https://github.com/user-attachments/assets/1428a01a-576e-4629-854e-6c9a1e522720)
+  ![image](https://github.com/user-attachments/assets/028c7140-49f9-4b63-a029-d133f161467a)
+
+  (Just if we've to run a runner manually :- gitlab runner run )
+
+- Now if we've to run specific job on the runner we just created, we've to provide tag of this runner. Tags specify on which executor we've to run the job. (Just like agent in jenkins, we've runner here).
+  But here the issue is whenever the runner starts, it stops the older instance. So we've to check one file :- **/home/gitlab-runner/.bash_logout** and comment out the loop. Then run the runner again  :- **gitlab-runner run**
+  Now run our pipeline, it will pass
+  Now if we see **/home/gitlab-runner**, the folder **build** will be generated there. Inside which all our project will be there i.e inside our instance.
+
+- In short runner means connecting instance on Gitlab and on it the runner installed will run our project.
+
+  <img width="717" alt="image" src="https://github.com/user-attachments/assets/ca9b45ae-aef2-40d3-83bb-91d9f62bb1ed" />
+
